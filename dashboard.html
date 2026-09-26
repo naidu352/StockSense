@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StockSense - Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="dashboard-container">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                SS
+            </div>
+
+            <div>
+                <h2>StockSense</h2>
+                <span>Inventory System</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="/dashboard" class="nav-item active">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+
+            <p class="nav-title">INVENTORY</p>
+
+            <a href="/products" class="nav-item">
+                <span>📦</span>
+                Products
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>📥</span>
+                Receipts
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>📤</span>
+                Delivery Orders
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🔄</span>
+                Internal Transfers
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🧮</span>
+                Inventory Adjustments
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>📋</span>
+                Move History
+            </a>
+
+
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="#" class="nav-item">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>👤</span>
+                My Profile
+            </a>
+
+            <a href="/" class="nav-item logout">
+                <span>🚪</span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome back! Here's your inventory overview.
+                </p>
+
+            </div>
+
+
+            <div class="profile-area">
+
+                <div class="notification">
+                    🔔
+                    <span class="notification-dot"></span>
+                </div>
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Admin</strong>
+                        <small>Inventory Manager</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= KPI CARDS ================= -->
+
+        <section class="kpi-grid">
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon blue">
+                    📦
+                </div>
+
+                <div class="kpi-content">
+
+                    <span>Total Products in Stock</span>
+
+                    <h2>1,248</h2>
+
+                    <small class="positive">
+                        ↑ 8.4% from last month
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon orange">
+                    ⚠️
+                </div>
+
+                <div class="kpi-content">
+
+                    <span>Low / Out of Stock</span>
+
+                    <h2>24</h2>
+
+                    <small class="warning-text">
+                        Requires attention
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon purple">
+                    📥
+                </div>
+
+                <div class="kpi-content">
+
+                    <span>Pending Receipts</span>
+
+                    <h2>18</h2>
+
+                    <small>
+                        Incoming stock
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon green">
+                    📤
+                </div>
+
+                <div class="kpi-content">
+
+                    <span>Pending Deliveries</span>
+
+                    <h2>12</h2>
+
+                    <small>
+                        Outgoing stock
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon cyan">
+                    🔄
+                </div>
+
+                <div class="kpi-content">
+
+                    <span>Internal Transfers</span>
+
+                    <h2>7</h2>
+
+                    <small>
+                        Scheduled
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= FILTERS ================= -->
+
+        <section class="filter-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Inventory Operations</h2>
+
+                    <p>
+                        Monitor your current inventory activities.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="filters">
+
+                <select>
+                    <option>All Document Types</option>
+                    <option>Receipts</option>
+                    <option>Delivery</option>
+                    <option>Internal</option>
+                    <option>Adjustments</option>
+                </select>
+
+
+                <select>
+                    <option>All Status</option>
+                    <option>Draft</option>
+                    <option>Waiting</option>
+                    <option>Ready</option>
+                    <option>Done</option>
+                    <option>Canceled</option>
+                </select>
+
+
+                <select>
+                    <option>All Warehouses</option>
+                    <option>Main Warehouse</option>
+                    <option>Production Floor</option>
+                    <option>Warehouse 2</option>
+                </select>
+
+
+                <select>
+                    <option>All Categories</option>
+                    <option>Raw Materials</option>
+                    <option>Finished Goods</option>
+                    <option>Tools</option>
+                    <option>Equipment</option>
+                </select>
+
+
+                <button class="filter-button">
+                    Apply Filters
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RECENT OPERATIONS ================= -->
+
+        <section class="operations-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Recent Operations</h2>
+
+                    <p>
+                        Latest inventory movements.
+                    </p>
+
+                </div>
+
+                <button class="view-all">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Reference</th>
+
+                            <th>Type</th>
+
+                            <th>Product</th>
+
+                            <th>Quantity</th>
+
+                            <th>Location</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <strong>REC-00124</strong>
+                            </td>
+
+                            <td>
+                                <span class="type receipt">
+                                    Receipt
+                                </span>
+                            </td>
+
+                            <td>Steel Rods</td>
+
+                            <td>+50 units</td>
+
+                            <td>Main Warehouse</td>
+
+                            <td>
+                                <span class="status done">
+                                    Done
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>DEL-00087</strong>
+                            </td>
+
+                            <td>
+                                <span class="type delivery">
+                                    Delivery
+                                </span>
+                            </td>
+
+                            <td>Office Chairs</td>
+
+                            <td>-10 units</td>
+
+                            <td>Main Warehouse</td>
+
+                            <td>
+                                <span class="status ready">
+                                    Ready
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>INT-00042</strong>
+                            </td>
+
+                            <td>
+                                <span class="type transfer">
+                                    Internal
+                                </span>
+                            </td>
+
+                            <td>Steel Sheets</td>
+
+                            <td>25 units</td>
+
+                            <td>
+                                Main → Production
+                            </td>
+
+                            <td>
+                                <span class="status waiting">
+                                    Waiting
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>ADJ-00018</strong>
+                            </td>
+
+                            <td>
+                                <span class="type adjustment">
+                                    Adjustment
+                                </span>
+                            </td>
+
+                            <td>Steel Rods</td>
+
+                            <td>-3 units</td>
+
+                            <td>Main Warehouse</td>
+
+                            <td>
+                                <span class="status done">
+                                    Done
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+</body>
+
+</html>
